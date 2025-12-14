@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Micros Unión Platense</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="60">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: #fff;
+            padding: 20px;
+        }
+        .micro {
+            background: #222;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+        h1 { font-size: 22px; }
+        h2 { margin: 0 0 10px 0; }
+    </style>
+</head>
+<body>
+
+<h1>🕒 {{ datos.hora }}</h1>
+
+<div class="micro">
+    <h2>🚍 273 BG — 7 y 47</h2>
+    {% if datos["273"] %}
+        <p>Llega: {{ datos["273"].llega }} ({{ datos["273"].min }} min)</p>
+    {% else %}
+        <p>Sin información</p>
+    {% endif %}
+</div>
+
+<div class="micro">
+    <h2>🚍 520 2 — Ruta 11 y 609</h2>
+    {% if datos["520"] %}
+        <p>Llega: {{ datos["520"].llega }} ({{ datos["520"].min }} min)</p>
+    {% else %}
+        <p>Sin información</p>
+    {% endif %}
+</div>
+
+</body>
+</html>
